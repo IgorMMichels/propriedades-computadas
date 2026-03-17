@@ -2,15 +2,16 @@
 import { ref, computed } from 'vue'
 const nome = ref('')
 const sobrenome = ref('')
+const texto = ref('')
 
 const nomeCompleto = computed(() => {
   console.log('Calculando nome completo...')
-  return `${nome.value} ${sobrenome.value}`;
+  return `${nome.value} ${sobrenome.value}`
 })
 
 const nomeCompleto2 = () => {
   console.log('Calculando nome completo...')
-  return `${nome.value} ${sobrenome.value}`;
+  return `${nome.value} ${sobrenome.value}`
 }
 </script>
 
@@ -19,7 +20,9 @@ const nomeCompleto2 = () => {
     <input type="text" v-model="nome" />
     <input type="text" v-model="sobrenome" />
     <label>Nome completo: {{ nomeCompleto }}</label>
-    <label>Nome completo 2: {{ nomeCompleto2 }}</label>
+    <label>Nome completo 2: {{ nomeCompleto2() }}</label>
+    <input type="text" v-model="texto" />
+    <label> {{ texto }} </label>
   </div>
 </template>
 
